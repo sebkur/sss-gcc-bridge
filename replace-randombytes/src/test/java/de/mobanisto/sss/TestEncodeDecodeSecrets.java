@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestEncodeDecode
+public class TestEncodeDecodeSecrets
 {
 
 	@Test
@@ -14,12 +14,9 @@ public class TestEncodeDecode
 		int n = 3;
 		int k = 2;
 
-		byte[] data = new byte[SSS.MLEN];
-		for (int i = 0; i < data.length; i++) {
-			data[i] = (byte) i;
-		}
+		byte[] data = Secrets.create("a secret");
 
-		System.out.println(Shares.toHexString(data));
+		System.out.println(new String(data));
 
 		List<byte[]> shares = SSS.createShares(data, n, k);
 
@@ -29,10 +26,9 @@ public class TestEncodeDecode
 
 		byte[] recovered = SSS.combineShares(shares);
 
-		System.out.println(Shares.toHexString(recovered));
+		System.out.println(new String(recovered));
 
-		Assert.assertEquals(Shares.toHexString(data),
-				Shares.toHexString(recovered));
+		Assert.assertEquals(new String(data), new String(recovered));
 	}
 
 }
