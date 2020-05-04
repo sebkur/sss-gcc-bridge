@@ -31,3 +31,7 @@ After that completed you can ssh into the machine and build the project:
 
 Vagrant uses the project directory on your real local machine as a shared folder
 so that the build results are available in your `target` directory locally.
+
+When you're done, shut down the virtual machine:
+
+    vagrant halt
