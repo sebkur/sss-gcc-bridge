@@ -4,6 +4,9 @@ wrapper {
 
 apply plugin: 'java'
 
+group = pGroup
+version = pVersion
+
 repositories {
     jcenter()
     maven {
