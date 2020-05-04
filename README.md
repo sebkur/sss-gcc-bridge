@@ -19,7 +19,7 @@ artifacts are then platform independent and can be used on any system.
 
 ## Compiling
 
-To compile the C sources, first go to the `bridge` direcotry.
+To compile the C sources, first go to the `bridge` directory.
 
 There you need to set up the build virtual machine using vagrant:
 
@@ -37,3 +37,12 @@ so that the build results are available in your `target` directory locally.
 When you're done, shut down the virtual machine:
 
     vagrant halt
+
+Then, from the toplevel directory of the whole project, copy the generated
+JAR file to the main project:
+
+    cp bridge/target/sss-gcc-bridge-1.0.0.jar sss-gcc-bridge/bridge/
+
+Switch to the `sss-gcc-bridge` directory and build using Gradle:
+
+    ./gradlew build
