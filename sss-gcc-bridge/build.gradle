@@ -15,6 +15,9 @@ repositories {
     }
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
     compile 'org.renjin:gcc-runtime:0.9.2594'
     compile fileTree('bridge')
