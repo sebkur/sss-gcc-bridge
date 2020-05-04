@@ -484,7 +484,7 @@ int crypto_box_open(u8 *m,const u8 *c,u64 d,const u8 *n,const u8 *y,const u8 *x)
   return crypto_box_open_afternm(m,c,d,n,k);
 }
 
-static u64 R(u64 x,int c) { return (x >> c) | (x << (64 - c)); }
+static i64 R(i64 x,int c) { return (x >> c) | (x << (64 - c)); }
 static u64 Ch(u64 x,u64 y,u64 z) { return (x & y) ^ (~x & z); }
 static u64 Maj(u64 x,u64 y,u64 z) { return (x & y) ^ (x & z) ^ (y & z); }
 static u64 Sigma0(u64 x) { return R(x,28) ^ R(x,34) ^ R(x,39); }
