@@ -19,8 +19,15 @@ artifacts are then platform independent and can be used on any system.
 
 ## Compiling
 
-You can build the java library by running
+First you need to set up the build virtual machine using vagrant:
 
-```
-mvn install
-```
+    vagrant up
+
+After that completed you can ssh into the machine and build the project:
+
+    vagrant ssh
+    cd sss-gcc-bridge
+    mvn install
+
+Vagrant uses the project directory on your real local machine as a shared folder
+so that the build results are available in your `target` directory locally.
