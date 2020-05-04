@@ -3,6 +3,7 @@ wrapper {
 }
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
 
 group = pGroup
 version = pVersion
@@ -16,6 +17,9 @@ repositories {
 
 dependencies {
     compile 'org.renjin:gcc-runtime:0.9.2594'
+    compile fileTree('bridge')
+
+    testCompile 'junit:junit:4.12'
 }
 
 jar {
