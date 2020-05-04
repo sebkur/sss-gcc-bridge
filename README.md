@@ -19,7 +19,9 @@ artifacts are then platform independent and can be used on any system.
 
 ## Compiling
 
-First you need to set up the build virtual machine using vagrant:
+To compile the C sources, first go to the `bridge` direcotry.
+
+There you need to set up the build virtual machine using vagrant:
 
     vagrant up
 
